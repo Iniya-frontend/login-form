@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./fort.css">
+    <link rel="stylesheet" href="./bootstrap-5.3.0-dist - Copy/css/bootstrap.min.css">
+</head>
+<body>
+    <script src="./frst.js"></script>
+    <div class="container bg-light w-75 my-5 h-auto">
+        <div class="row">
+            <div class="col col-lg-4 offset-lg-2 col-md-6 col-sm-12 col-xs-12 my-4">
+                <div class="div_1">
+            <label>Full Name</label><br>
+            <input type="text" placeholder="Enter your name" id="name" style="outline: none;">
+            <span class="span_1"></span>
+        </div><br>
+        <div class="div_2">
+            <label>Email</label><br>
+            <input type="email" placeholder="Enter your email" id="mail" style="outline: none;">
+        </div><br>
+        <div class="div_3">
+            <label>password</label><br>
+            <input type="password" placeholder="Enter your password" id="pass" style="outline: none;">
+        </div>
+        </div>
+        <div class="col col-lg-6 col-md-6 col-sm-12 col-xs-12 my-4">
+            <div class="div_4">
+                <label>User Name</label><br>
+                <input type="text" placeholder="Enter your name" id="name2" style="outline: none;">
+            </div><br>
+            <div class="div_5">
+                <label>Phone number</label><br>
+                <input type="numbers" placeholder="Enter your number" id="phn" style="outline:none;" maxlength=10/>
+            </div><br>
+            <div class="div_6">
+                <label>Confirm password</label><br>
+                <input type="password" placeholder="Enter your password" id="pass2" style="outline: none;">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-1 offset-lg-2 col-md-4 col-sm-12 col-xs-12">
+        <label>male</label>
+          <input type="radio" id="male">
+        </div>&nbsp;&nbsp;&nbsp;
+        <div class="col col-lg-2 offset-lg-1 col-md-4 col-sm-12 col-xs-12">
+          <label>Female</label>
+          <input type="radio" id="female">
+        </div>
+        <div class="col col-lg-3 offset-lg-0 col-md-4 col-sm-12 col-xs-12">
+          <label>prefer to say</label>
+          <input type="radio" id="pre">
+        </div>
+        </div><br>
+         <div class="row">
+            <div class="col col-lg-9 offset-lg-3 col-md-6 offset-md-2 col-sm-10 offset-sm-2 col-xs-10 offset-xs-2 my-lg-4">
+        <button onclick="valid()">Register</button>
+    </div>
+    </div>
+    
+  </div>
+    <script>
+        function valid(){
+    console.log("working");
+    var name1=document.getElementById("name").value;
+    let formula1=/[a-z]/g;
+    if(name1.match(formula1)){
+    document.getElementById("name").style.borderColor="green";
+   
+    }
+    
+    else{
+        document.getElementById("name").style.borderColor="red";
+          
+    }
+    var email=document.getElementById("mail").value;
+    if (!email=="") {
+        document.getElementById("mail").style.borderColor="green";
+    }
+    else{
+        document.getElementById("mail").style.borderColor="red";   
+    }  
+    var password=document.getElementById("pass").value;
+    
+    if (password.match(confpassword)&&(!password=="")) {
+        document.getElementById("pass").style.borderColor="green";
+    }
+    // else if(password.length==8){
+    //     document.getElementById("pass").style.borderColor="green";
+    //     console.log("correct");
+    // }
+    else{
+        document.getElementById("pass").style.borderColor="red"; 
+        console.log("password must be 8 characters");  
+    } 
+    var usname=document.getElementById("name2").value;
+    let formula3=/[a-z]/g;
+    if(name1.match(formula3)){
+    document.getElementById("name2").style.borderColor="green";
+   
+    }
+    else{
+        document.getElementById("name2").style.borderColor="red";
+          
+    } 
+    var phone=document.getElementById("phn").value;
+    let formula4=/[\d]/g;
+    if (phone.match(formula4)){
+        document.getElementById("phn").style.borderColor="green";
+        if(phone.length==10){
+        document.getElementById("phn").style.borderColor="green";
+        console.log("correct");
+    }
+    else{
+        document.getElementById("phn").style.borderColor="red"; 
+        console.log("phone number must be 10 characters");  
+    }
+}
+else{
+    document.getElementById("phn").style.borderColor="red"; 
+}
+    
+    var confpassword=document.getElementById("pass2").value;
+    if (password.match(confpassword)&&(!password=="")){
+        document.getElementById("pass2").style.borderColor="green";
+    }
+    // else if(confpassword.length==8){
+    //     document.getElementById("pass2").style.borderColor="green";
+    //     console.log("correct");
+    // }
+    else{
+        document.getElementById("pass2").style.borderColor="red"; 
+        console.log(" confirm password must be 8 characters");  
+    } 
+    var radio=document.getElementById("male").value;
+    if(radio==male) {
+        document.getElementById("male").style.color="green";
+        alert("okk");
+    }
+    
+    }
+
+    </script>
+    
+
+
+</body>
+</html>
